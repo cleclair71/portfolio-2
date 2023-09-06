@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Mioge';
+  src: url('./assets/font/Mioge.ttf') format('truetype');
+}
+
 .App {
   text-align: center;
 }

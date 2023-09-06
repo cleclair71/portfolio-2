@@ -1,25 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import bgImage from './assets/images/bgg.png';
+import styled from 'styled-components';
+import TransulentBox from './components/TransulentBox';
+import Landing from './components/landing/Landing';
+import About from './components/about/About';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BackgroundContainer>
+      <TransulentBox>
+      <Landing />
+      </TransulentBox>
+
+    </BackgroundContainer>
   );
 }
 
 export default App;
+const BackgroundContainer = styled.div`
+  background-image: url(${bgImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
+`;

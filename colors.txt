@@ -1,0 +1,4 @@
+gold: #e2d459
+black: #15110d
+grey: #56524f
+white: #cccccb
