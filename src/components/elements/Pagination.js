@@ -1,12 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const Pagination = ({ totalSlides, currentSlide }) => {
+function DotComponent({ index, active, onClick }) {
+    return (
+        <Dot 
+            active={active} 
+            onClick={() => onClick(index)}
+        />
+    );
+}
+const Pagination = ({ totalSlides, currentSlide, handleDotClick }) => {
     return (
         <PaginationContainer>
             {Array.from({ length: totalSlides }).map((_, index) => (
-                <Dot key={index} active={index === currentSlide} />
-            ))}
+    <DotComponent 
+        key={index} 
+        active={index === currentSlide} 
+        index={index} 
+        onClick={handleDotClick}
+    />
+))}
         </PaginationContainer>
     );
     
@@ -30,6 +42,9 @@ const Dot = styled.span`
     key={index}
     active={index === currentSlide}
     onClick={() => setCurrentSlide(index)}
+    &:hover {
+        background: rgba(226, 212, 89, 0.5);
+    }
 `;
 
 export default Pagination;

@@ -5,12 +5,15 @@ import styled from 'styled-components';
 import TranslucentBox from './components/TransulentBox';
 import Landing from './components/landing/Landing';
 import About from './components/about/About';
+// import ProjectComponent from './components/projects/Index';
+import ProjectTest from './components/project2/index';
 
 
 function App() {
   const slides = [
     () => <Landing />,
-    () => <About />
+    () => <About />,
+    () => <ProjectTest/>
 ];
   
   return (

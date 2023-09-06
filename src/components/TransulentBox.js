@@ -18,14 +18,14 @@ const TranslucentBox = ({ slides }) => {
         config: { tension: 280, friction: 60 }
     });
 
-    const handleLeftClick = () => {
-        setIsSlidingRight(true); 
-        if (currentSlide > 0) {
-            setCurrentSlide(prev => prev - 1);
-        } else {
-            setCurrentSlide(totalSlides - 1);
-        }
-    };
+    // const handleLeftClick = () => {
+    //     setIsSlidingRight(true); 
+    //     if (currentSlide > 0) {
+    //         setCurrentSlide(prev => prev - 1);
+    //     } else {
+    //         setCurrentSlide(totalSlides - 1);
+    //     }
+    // };
 
     const handleRightClick = () => {
         setIsSlidingRight(false); 
@@ -38,7 +38,7 @@ const TranslucentBox = ({ slides }) => {
 
     return (
         <Wrapper>
-        <ArrowLeft src={arrowL} onClick={handleLeftClick} />
+        {/* <ArrowLeft src={arrowL} onClick={handleLeftClick} /> */}
         <ArrowRight src={arrowR} onClick={handleRightClick} />
         <ContentContainer key={currentSlide} style={{ transform: props.x.to(x => `translate3d(${x}%,0,0)`) }}>
         {slides.map((SlideComponent, index) => (
@@ -47,7 +47,11 @@ const TranslucentBox = ({ slides }) => {
     </Slide>
 ))}
 </ContentContainer>
-<Pagination totalSlides={totalSlides} currentSlide={currentSlide} />
+<Pagination 
+    totalSlides={totalSlides} 
+    currentSlide={currentSlide} 
+    handleDotClick={setCurrentSlide} 
+/>
     </Wrapper>
     );
 }
