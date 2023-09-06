@@ -5,6 +5,7 @@ import arrowR from '../assets/images/elements/arrowR.png';
 import About from './about/About';
 import { useSpring, animated } from 'react-spring';
 import Landing from './landing/Landing';
+import Pagination from './elements/Pagination';
 
 const TranslucentBox = ({ slides }) => {
     
@@ -46,6 +47,7 @@ const TranslucentBox = ({ slides }) => {
     </Slide>
 ))}
 </ContentContainer>
+<Pagination totalSlides={totalSlides} currentSlide={currentSlide} />
     </Wrapper>
     );
 }
