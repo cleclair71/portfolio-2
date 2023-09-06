@@ -2,22 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 import bgImage from './assets/images/bgg.png';
 import styled from 'styled-components';
-import TransulentBox from './components/TransulentBox';
+import TranslucentBox from './components/TransulentBox';
 import Landing from './components/landing/Landing';
 import About from './components/about/About';
 
+
 function App() {
+  const slides = [<Landing />, <About />];
+  
   return (
     <BackgroundContainer>
-      <TransulentBox>
-      <Landing />
-      </TransulentBox>
-
+      <TranslucentBox slides={slides} />
     </BackgroundContainer>
   );
 }
 
-export default App;
+
 const BackgroundContainer = styled.div`
   background-image: url(${bgImage});
   background-size: cover;
@@ -29,3 +29,4 @@ const BackgroundContainer = styled.div`
   display: flex;
   align-items: center; 
 `;
+export default App;

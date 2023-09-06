@@ -20,9 +20,6 @@ align-items: center;
 position: relative;
 
 `;
-
-
-
 const OverlayText = styled.div`
     position: absolute;
     font-family: 'Mioge', sans-serif;
