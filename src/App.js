@@ -8,7 +8,10 @@ import About from './components/about/About';
 
 
 function App() {
-  const slides = [<Landing />, <About />];
+  const slides = [
+    () => <Landing />,
+    () => <About />
+];
   
   return (
     <BackgroundContainer>

@@ -4,16 +4,15 @@ import styled from 'styled-components';
 
 const About = () => {
     return (
-        <LandingContainer>
-        
+        <AboutContainer>     
           <OverlayText>
-        front <br /> end <br /> developer
+        FRONT <br /> end <br /> developer
       </OverlayText>
-    </LandingContainer>  
+    </AboutContainer>  
     );
 }
 
-const LandingContainer = styled.div`
+const AboutContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -21,13 +20,15 @@ position: relative;
 
 `;
 const OverlayText = styled.div`
-    position: absolute;
-    font-family: 'Mioge', sans-serif;
-    font-size: 4rem;
-    color: #e2d459;
-    left: calc(50% - 15vw); 
-    margin-top: 40vh;
-    text-shadow: 2px 2px 2px #000000;
+position: absolute;
+font-family: 'Mioge', sans-serif;
+font-size: 4rem;
+color: #e2d459;
+left: 50%;  
+top: 50%;   
+transform: translate(-50%, -50%);  
+text-shadow: 2px 2px 2px #000000;
+margin-top: 40vh;
 `;
 
 export default About;
