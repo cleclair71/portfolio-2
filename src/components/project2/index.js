@@ -1,41 +1,73 @@
 import React from 'react';
 import styled from 'styled-components';
 import cassieImage from '../../assets/images/cassie.png';
+import VerticalSwipeToSlide from '../project2/Carousel';
 
 const ProjectTest = () => {
     return (
         <LandingContainer>
-          <CenteredImage src={cassieImage} alt="Cassie" />
-          <OverlayText>
-        front <br /> end <br /> developer
-      </OverlayText>
-    </LandingContainer>  
+            <LeftColumn>
+                <img src={cassieImage} alt="Cassie" />
+                {/* Add any other content you want in the left column here */}
+            </LeftColumn>
+            <RightColumn>
+                <VerticalSwipeToSlide />
+            </RightColumn>
+        </LandingContainer>
     );
 }
 
 const LandingContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    // padding: 20px;
+    align-items: center;
+    position: relative;
+    
+    @media (max-width: 768px) {  
+        flex-direction: column-reverse; 
+       
 
+    }
+`;
+const LeftColumn = styled.div`
+    flex: 1; 
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%; 
+    max-height: 90%; 
+    
+    img {
+        max-width: 100%;  
+        max-height: 100%; 
+    }
+    @media (max-width: 768px) {
+        max-width: 100%;
+        max-height: 50%;
+        overflow: hidden;
+    }
 `;
 
-const CenteredImage = styled.img`
-height: 60vh;
-display: block;
-margin: auto;
-margin-top: 15vh;
+const RightColumn = styled.div`
+    flex: 1; 
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;  // Max width for right column
+    max-height: 90%; // Use 90% of the viewport height
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        max-height: 50%;
+        overflow: hidden;
+    }
 `;
 
-const OverlayText = styled.div`
-    position: absolute;
-    font-family: 'Mioge', sans-serif;
-    font-size: 4rem;
-    color: #e2d459;
-    left: calc(50% - 15vw); 
-    margin-top: 40vh;
-    text-shadow: 2px 2px 2px #000000;
-`;
+
 
 export default ProjectTest;

@@ -8,11 +8,11 @@ import Landing from './landing/Landing';
 import Pagination from './elements/Pagination';
 
 const TranslucentBox = ({ slides }) => {
-    
+
     const [currentSlide, setCurrentSlide] = React.useState(0);
     const totalSlides = slides.length;
     const [isSlidingRight, setIsSlidingRight] = React.useState(false);
-  
+
     const props = useSpring({
         x: isSlidingRight ? (currentSlide * 100) : (currentSlide * -100),
         config: { tension: 280, friction: 60 }
@@ -28,7 +28,7 @@ const TranslucentBox = ({ slides }) => {
     // };
 
     const handleRightClick = () => {
-        setIsSlidingRight(false); 
+        setIsSlidingRight(false);
         if (currentSlide < totalSlides - 1) {
             setCurrentSlide(prev => prev + 1);
         } else {
@@ -38,21 +38,21 @@ const TranslucentBox = ({ slides }) => {
 
     return (
         <Wrapper>
-        {/* <ArrowLeft src={arrowL} onClick={handleLeftClick} /> */}
-        <ArrowRight src={arrowR} onClick={handleRightClick} />
-        <ContentContainer key={currentSlide} style={{ transform: props.x.to(x => `translate3d(${x}%,0,0)`) }}>
-        {slides.map((SlideComponent, index) => (
-    <Slide key={index}>
-        <SlideComponent />
-    </Slide>
-))}
-</ContentContainer>
-<Pagination 
-    totalSlides={totalSlides} 
-    currentSlide={currentSlide} 
-    handleDotClick={setCurrentSlide} 
-/>
-    </Wrapper>
+            {/* <ArrowLeft src={arrowL} onClick={handleLeftClick} /> */}
+            <ArrowRight src={arrowR} onClick={handleRightClick} />
+            <ContentContainer key={currentSlide} style={{ transform: props.x.to(x => `translate3d(${x}%,0,0)`) }}>
+                {slides.map((SlideComponent, index) => (
+                    <Slide key={index}>
+                        <SlideComponent />
+                    </Slide>
+                ))}
+            </ContentContainer>
+            <Pagination
+                totalSlides={totalSlides}
+                currentSlide={currentSlide}
+                handleDotClick={setCurrentSlide}
+            />
+        </Wrapper>
     );
 }
 
