@@ -3,6 +3,31 @@
   src: url('./assets/font/Mioge.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Qarkine';
+  src: url('./assets/font/Qarkine.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Karatone';
+  src: url('./assets/font/Karatone.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Griffin';
+  src: url('./assets/font/Griffin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EuAlonira';
+  src: url('./assets/font/EuAlonira.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BritaniaLigatura';
+  src: url('./assets/font/BritaniaLigatura.ttf') format('truetype');
+}
+
 .App {
   text-align: center;
 }

@@ -2,7 +2,7 @@ let contentData = [
     {
         key: 1,
         content: {
-            title: 'Project 1',
+            title: 'TINYSQUARES',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
             githubLink: 'https://github.com/user/project1',
             websiteLink:'https://project1.com'
@@ -11,7 +11,7 @@ let contentData = [
     {
         key: 2,
         content: {
-            title: 'Project 2',
+            title: 'NOMAD NEBULA',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
             githubLink: 'https://github.com/user/project1',
             websiteLink:'https://project1.com'
@@ -20,7 +20,7 @@ let contentData = [
     {
         key: 3,
         content: {
-            title: 'Project 3',
+            title: 'SKYBLE',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
             githubLink: 'https://github.com/user/project1',
             websiteLink:'https://project1.com'
