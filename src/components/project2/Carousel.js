@@ -79,6 +79,12 @@ export default class VerticalSwipeToSlide extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.activeSlide !== this.state.activeSlide) {
+            this.props.onSlideChange(this.state.activeSlide);
+        }
+    }
+
     render() {
         const getOpacity = (index) => {
             if (index === this.state.activeSlide) return 1;

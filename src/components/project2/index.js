@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import cassieImage from '../../assets/images/cassie.png';
 import VerticalSwipeToSlide from '../project2/Carousel';
+import ContentSlide from './ContentSlide';
+import ContentData from './ContentData';
 
 const ProjectTest = () => {
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    const handleSlideChange = (slideIndex) => {
+        setActiveSlide(slideIndex);
+    }
+
+    const activeProject = ContentData[activeSlide]?.content;
+
     return (
         <LandingContainer>
             <LeftColumn>
-                <img src={cassieImage} alt="Cassie" />
-                {/* Add any other content you want in the left column here */}
+                {activeProject && (
+                    <ContentSlide 
+                        title={activeProject.title}
+                        description={activeProject.description}
+                        githubLink={activeProject.githubLink}
+                        websiteLink={activeProject.websiteLink}
+                    />
+                )}
             </LeftColumn>
             <RightColumn>
-                <VerticalSwipeToSlide />
+                <VerticalSwipeToSlide onSlideChange={handleSlideChange} />
             </RightColumn>
         </LandingContainer>
     );
